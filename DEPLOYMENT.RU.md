@@ -2,6 +2,7 @@
 
 ## Доступные переменные окружения
 
+- NEXT_PUBLIC_BASE_PATH (префикс пути, например `/anixart`; задаётся до сборки без завершающего `/`)
 - NEXT_PUBLIC_PLAYER_PARSER_URL ([player-parser](https://github.com/AniX-org/anix-player-parser) суб-сервис, если был развёрнут)
 - NEXT_PUBLIC_API_URL ([api-prox](https://github.com/AniX-org/anix-api-prox) суб-сервис, если был развёрнут)
 - NEXT_PUBLIC_SHARE_PREFIX ([anix-preview](https://github.com/AniX-org/anix-preview) суб-сервис, если был развёрнут, не указывайте, для использования официальной ссылки anixart "Поделится")
@@ -126,6 +127,8 @@
 
 > [!NOTE]
 > ПОДСКАЗКА: для установки переменных, необходимо использовать `-e ПЕРЕМЕННАЯ=ЗНАЧЕНИЕ` до последнего слова anix
+>
+> `NEXT_PUBLIC_BASE_PATH` задаётся во время ручной сборки: `docker build --build-arg NEXT_PUBLIC_BASE_PATH=/anixart -t anix .`
 
 [Доступные переменные окружения](#доступные-переменные-окружения)
 

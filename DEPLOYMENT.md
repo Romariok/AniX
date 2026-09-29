@@ -2,6 +2,7 @@
 
 ## Available environment variables
 
+- NEXT_PUBLIC_BASE_PATH (path prefix, for example `/anixart`; set it before the build without a trailing `/`)
 - NEXT_PUBLIC_PLAYER_PARSER_URL ([player-parser](https://github.com/AniX-org/anix-player-parser) subservice, if deployed)
 - NEXT_PUBLIC_API_URL ([api-prox](https://github.com/AniX-org/anix-api-prox) subservice, if deployed)
 - NEXT_PUBLIC_SHARE_PREFIX ([anix-preview](https://github.com/AniX-org/anix-preview) subservice, if deployed, leave default to use official link preview)
@@ -126,6 +127,8 @@ Additional Requirements:
 
 > [!NOTE]
 > HINT: you need to use `-e VARIABLE=VALUE` before the last word anix, to set the environment variables for docker deployment
+>
+> Set `NEXT_PUBLIC_BASE_PATH` during a manual build: `docker build --build-arg NEXT_PUBLIC_BASE_PATH=/anixart -t anix .`
 
 [Available environment variables](#available-environment-variables)
 

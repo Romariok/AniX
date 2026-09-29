@@ -5,7 +5,6 @@ const NextConfig = {
   output: "standalone",
   reactStrictMode: false,
   experimental: {
-    // ponytail: one worker keeps builds within small VPS memory; raise when memory is not constrained.
     cpus: 1,
   },
   images: {

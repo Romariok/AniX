@@ -70,7 +70,7 @@ export const ChangelogModal = (props: {
   }
 
   return (
-    <Modal show={props.isOpen} onClose={() => props.setIsOpen(false)}>
+    <Modal dismissible show={props.isOpen} onClose={() => props.setIsOpen(false)}>
       <ModalHeader>
         Список изменений v{props.versionResponse.version}
       </ModalHeader>

@@ -92,7 +92,6 @@ export const DiscoverFilterPage = () => {
       }
       setContent(_content);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const scrollPosition = useScrollPosition();

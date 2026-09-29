@@ -1,4 +1,4 @@
-FROM node:23-alpine AS base
+FROM node:24-alpine AS base
 
 
 FROM base AS deps
@@ -21,7 +21,7 @@ RUN npm run build
 
 
 FROM base AS runner
-LABEL org.opencontainers.image.source=https://github.com/radiquum/anix
+LABEL org.opencontainers.image.source=https://github.com/AniX-org/AniX
 RUN apk add --no-cache bash
 WORKDIR /app
 COPY ./scripts ./scripts
@@ -30,9 +30,7 @@ RUN chmod +x ./scripts/start.sh
 ENV NODE_ENV=production
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
 
 EXPOSE 3000
